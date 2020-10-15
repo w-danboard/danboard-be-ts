@@ -1,0 +1,37 @@
+{
+  "name": "danboard-be-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env PORT=8000 ts-node-dev --respawn ./src/bin/www.ts",
+    "dev": "cross-env PORT=8000 nodemon --exec ts-node --files ./src/bin/www.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "http-status-code": "^2.1.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.13",
+    "@types/express": "^4.17.8",
+    "@types/http-errors": "^1.8.0",
+    "@types/mocha": "^8.0.3",
+    "@types/morgan": "^1.9.1",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cross-env": "^7.0.2",
+    "macha": "^0.0.0",
+    "nodemon": "^2.0.5",
+    "nyc": "^15.1.0",
+    "ts-node": "^9.0.0",
+    "ts-node-dev": "^1.0.0-pre.65",
+    "typescript": "^4.0.3"
+  }
+}
