@@ -1,4 +1,5 @@
-import express, { Router, Request, Response } from 'express'
+import express, { Router, Request, Response, NextFunction } from 'express'
+import createError from 'http-errors'
 import { User } from '../model'
 let router: Router = express.Router()
 
@@ -42,10 +43,13 @@ router.get('/', async (request: Request, response: Response) => {
 })
 
 // 更新一个用户 PUT /users/:id
-router.get('/', async (request: Request, response: Response) => {
+router.get('/', async (request: Request, response: Response, next: NextFunction) => {
   let id = request.params.id
   let updateInfo = request.body
   let user = await User.findByPk(id)
+  if (!user) {
+    return next(createError()) // delete from users where id=?
+  }
   user = await user.update(updateInfo)
   response.json({
     success: true,
