@@ -1,2 +1,7 @@
-export * from './sequelize'
-export * from './user'
+import mongoose from '../db'
+import User from './user'
+
+export {
+  mongoose,
+  User
+}

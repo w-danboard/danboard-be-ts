@@ -1,11 +1,5 @@
-import express, { Router, Request, Response } from 'express'
-let router: Router = express.Router()
+import User from './users'
 
-router.get('/', (_request: Request, response: Response) => {
-  response.json({
-    success: true,
-    data: 'home'
-  })
-})
-
-export default router
+export {
+  User
+}
