@@ -1,5 +1,6 @@
 FROM node
-RUN mkdir -p /src/app
+RUN mkdir -p /danboard21
+WORKDIR /danboard21
 COPY ./danboard21 /src/app
 RUN yarn config set registry 'https://registry.npm.taobao.org'
 RUN yarn
