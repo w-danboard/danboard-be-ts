@@ -10,6 +10,7 @@ const NODE_ENV = {
 }
 
 let env = process.env.NODE_ENV || 'production'
+console.log(chalk.greenBright(env))
 let { username, password, db_name } = config[NODE_ENV[env]]
 let db = `mongodb://${username}:${password}@140.143.2.162:27017/${db_name}?authSource=admin`
 
