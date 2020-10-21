@@ -12,7 +12,8 @@ const NODE_ENV = {
 // let env = process.env.NODE_ENV || 'production'
 let env = 'production'
 console.log(chalk.greenBright(env))
-let { username, password, db_name } = config[NODE_ENV[env]]
+// let { username, password, db_name } = config[NODE_ENV[env]]
+let { username, password, db_name } = config['production']
 let db = `mongodb://${username}:${password}@140.143.2.162:27017/${db_name}?authSource=admin`
 
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
