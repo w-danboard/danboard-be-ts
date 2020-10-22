@@ -3,18 +3,18 @@ import mongoose from 'mongoose'
 import chalk from 'chalk'
 import config from '../config'
 
-const NODE_ENV = {
-  development: 'dev',
-  production: 'prod',
-  test: 'test'
-}
+// const NODE_ENV = {
+//   development: 'dev',
+//   production: 'prod',
+//   test: 'test'
+// }
 
 // let env = process.env.NODE_ENV || 'production'
 console.log(process.env.NODE_ENV, '===>')
 let env = 'production'
 console.log(chalk.greenBright(env))
 // let { username, password, db_name } = config[NODE_ENV[env]]
-let { username, password, db_name } = config['production']
+let { username, password, db_name } = config['dev']
 let db = `mongodb://${username}:${password}@140.143.2.162:27017/${db_name}?authSource=admin`
 
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
