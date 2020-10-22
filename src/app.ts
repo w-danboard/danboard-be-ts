@@ -6,7 +6,7 @@ let app: Express = express()
 
 import { User } from './routes'
 
-app.use(logger('development')) // 打印请求日志
+app.use(logger('dev')) // 打印请求日志
 app.use(express.json()) // 解析JSON格式的请求体
 app.use(express.urlencoded({ extended: true })) // 解析表单格式的请求体
 
