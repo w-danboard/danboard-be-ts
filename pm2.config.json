@@ -1,0 +1,11 @@
+{
+  "apps":
+  {
+    "name": "danboard-be-ts",
+    "script": "ts-node-dev ./src/bin/www.ts",
+    "env": {
+      "NODE_ENV": "prod",
+      "PORT": "8000"
+    }
+  }
+}
