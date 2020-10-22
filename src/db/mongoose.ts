@@ -10,6 +10,7 @@ const NODE_ENV = {
 }
 
 // let env = process.env.NODE_ENV || 'production'
+console.log(process.env.NODE_ENV, '===>')
 let env = 'production'
 console.log(chalk.greenBright(env))
 // let { username, password, db_name } = config[NODE_ENV[env]]
