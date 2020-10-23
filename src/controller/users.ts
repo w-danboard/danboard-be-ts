@@ -1,7 +1,7 @@
 import express, { Router, Request, Response, NextFunction } from 'express'
 // import createError from 'http-errors'
 import { User } from '../model'
-import { find } from '../db'
+import { find } from '../common/db'
 let router: Router = express.Router()
 
 // 获取所有用户 GET /users

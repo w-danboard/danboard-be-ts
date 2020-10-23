@@ -4,7 +4,7 @@ import { NOT_FOUND, INTERNAL_SERVER_ERROR } from 'http-status-code'
 import logger from 'morgan'
 let app: Express = express()
 
-import { User } from './routes'
+import { User } from './controller'
 
 app.use(logger('dev')) // 打印请求日志
 app.use(express.json()) // 解析JSON格式的请求体

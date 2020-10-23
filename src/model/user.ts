@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose from './mongoose'
 
 // 定义用户集合的骨架模型
 let UserSchema = new mongoose.Schema({
