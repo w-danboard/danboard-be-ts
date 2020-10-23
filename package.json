@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start pm2.config.json",
+    "start": "cross-env PORT=8000 NODE_ENV=prod ts-node-dev ./src/bin/www.ts",
     "dev": "cross-env PORT=8000 NODE_ENV=dev nodemon --exec ts-node --files ./src/bin/www.ts",
     "test": "cross-env PORT=8000 NODE_ENV=test TS_NODE_FILES=true NODE_ENV=test mocha -r ts-node/register src/tests/*.spec.ts --exit",
     "coverage": "nyc --reporter lcov npm run test"
