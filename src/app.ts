@@ -1,8 +1,8 @@
 import express, { Express, Request, Response, NextFunction } from 'express'
 import createError from 'http-errors'
-import { NOT_FOUND, INTERNAL_SERVER_ERROR } from 'http-status-code'
 import logger from 'morgan'
-let app: Express = express()
+import { getMessage } from './common/utils'
+const app: Express = express()
 
 import { User } from './controller'
 
@@ -14,10 +14,10 @@ app.use(express.urlencoded({ extended: true })) // 解析表单格式的请求�
 app.use('/users', User)
 
 app.use(function(_req: Request, _res: Response, next: NextFunction) {
-  next(createError(NOT_FOUND))
+  next(createError(getMessage(404)))
 })
 app.use(function(error: any, _req: Request, res: Response, _next: NextFunction) {
-  res.status(error.status || INTERNAL_SERVER_ERROR)
+  res.status(error.status || getMessage(500))
   res.json({
     success: false,
     error

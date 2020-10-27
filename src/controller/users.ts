@@ -1,16 +1,27 @@
 import express, { Router, Request, Response, NextFunction } from 'express'
 // import createError from 'http-errors'
 import { User } from '../model'
-import { find } from '../common/db'
+// import { find } from '../common/db'
 let router: Router = express.Router()
 
 // 获取所有用户 GET /users
-router.get('/', async (request: Request, response: Response) => {
-  let result: any = await find(User, request.query)
-  response.json({
-    success: true,
-    data: result
-  })
+router.post('/', async (request: Request, response: Response) => {
+  // let result: any = await find(User, request.query)
+  // response.json({
+  //   success: true,
+  //   data: result
+  // })
+
+  let user = request.body;
+  User.create(user, (err) => { // doc为成功后的请求体
+    if (!err) {
+       response.status(201); // 创建 新增 状态码为201
+       response.send({
+            code: 0, 
+            message: '注册成功!'
+        });
+    }
+});
 })
 
 // 获取某个用户 GET /users/:id

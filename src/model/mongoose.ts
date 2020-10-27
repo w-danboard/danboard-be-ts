@@ -6,7 +6,7 @@ import config from '../config'
 let env = process.env.NODE_ENV || 'prod'
 let { username, password, db_name } = config[env]
 
-let db = `mongodb://${username}:${password}@140.143.2.162:27017/${db_name}?authSource=admin`
+let db = `mongodb://${username}:${password}@152.136.24.175:27017/${db_name}?authSource=admin`
 
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
 
